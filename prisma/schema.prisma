@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Student {
+  id            String   @id
+  name          String
+  nameBangla    String   @default("")
+  phone         String
+  guardianName  String
+  guardianPhone String
+  address       String   @default("")
+  class         String
+  subjects      String
+  monthlyFee    Int
+  enrollDate    String
+  status        String   @default("active")
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  payments   Payment[]
+  attendance Attendance[]
+}
+
+model Payment {
+  id            String   @id
+  studentId     String
+  studentName   String
+  amount        Int
+  paidAmount    Int
+  dueAmount     Int
+  month         String
+  year          Int
+  status        String
+  method        String?
+  paidDate      String?
+  dueDate       String
+  receiptNumber String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  student Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+}
+
+model Attendance {
+  id          String   @id
+  studentId   String
+  studentName String
+  date        String
+  status      String
+  createdAt   DateTime @default(now())
+
+  student Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@unique([studentId, date])
+}

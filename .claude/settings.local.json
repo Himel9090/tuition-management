@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx prisma *)",
+      "Bash(npx tsc *)",
+      "Bash(npm install *)",
+      "Bash(node -e \"const a = require\\('@prisma/adapter-libsql'\\); console.log\\(Object.keys\\(a\\)\\)\")",
+      "Bash(npx next *)",
+      "Bash(curl -s -X POST http://localhost:3001/api/seed)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s -X POST http://localhost:3002/api/seed)",
+      "Bash(curl -s http://localhost:3002/api/students)",
+      "Bash(node -e \"const d=JSON.parse\\(require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\)\\); console.log\\('Count:', d.length\\); console.log\\('First:', JSON.stringify\\(d[0], null, 2\\).slice\\(0,300\\)\\)\")",
+      "Bash(curl -s http://localhost:3003/api/students)",
+      "Bash(curl -s \"http://localhost:3003/api/students\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('Count:', len\\(d\\)\\); print\\('Has subject array:', isinstance\\(d[0].get\\('subject'\\), list\\)\\); print\\('Has subjects string:', 'subjects' in d[0]\\)\")",
+      "Bash(curl -s \"http://localhost:3003/api/payments\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('Payments count:', len\\(d\\)\\); print\\('First:', d[0]['studentName'], d[0]['status'], d[0]['amount']\\)\")",
+      "Bash(curl -s \"http://localhost:3003/api/attendance\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('Attendance count:', len\\(d\\)\\); print\\('First:', d[0]['studentName'], d[0]['date'], d[0]['status']\\)\")",
+      "Bash(curl *)",
+      "Bash(python -c ' *)",
+      "Bash(npx playwright *)"
+    ]
+  }
+}
