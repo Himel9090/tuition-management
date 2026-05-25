@@ -142,7 +142,7 @@ export function DashboardView() {
         {/* Today's attendance */}
         <div className="card">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-semibold text-gray-900">Today's Attendance</h2>
+            <h2 className="font-semibold text-gray-900">Today&apos;s Attendance</h2>
             <Link href="/attendance" className="text-xs text-primary hover:underline">View all →</Link>
           </div>
 
